@@ -665,7 +665,7 @@
                     </div>
 
                     <div class="col-lg-6">
-                        <form action="forms/contact.php" method="post" class="php-email-form">
+                        <form action="contact.php" method="post" >
                             <div class="row gy-4">
 
                                 <div class="col-md-6">
