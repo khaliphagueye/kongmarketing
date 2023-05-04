@@ -25,7 +25,7 @@
            require ('test.php');    
            $target_dir = "cv/";
            $chemin = $target_dir . basename($_FILES["file"]["name"]);
-        $sth = $db->prepare("
+            $sth = $db->prepare("
                 INSERT INTO candidats(prenom, nom, mail, motiv, chemin)
                 VALUES(:prenom, :nom, :mail, :motiv, :chemin)");
             $sth->bindParam(':prenom',$prenom);
@@ -36,10 +36,10 @@
            // $sth->bindParam(':file',$file    );
             $sth->execute();
             header("location: index.php");
-    }else {
-        header("location: index.php#formu");
+        }else {
+            header("location: index.php#formu");
     }
-}catch(PDOException $e){
-    echo 'Impossible de traiter les données. Erreur : '.$e->getMessage();
+    }catch(PDOException $e){
+        echo 'Impossible de traiter les données. Erreur : '.$e->getMessage();
     }
 ?>
